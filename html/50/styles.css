@@ -5,3 +5,43 @@ h1{
     display: block;
     text-align: center;
 }
+.images{
+    display: block;
+    justify-self: center;
+    
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+
+}
+.hours {
+    list-style: none;
+    padding: 0;
+    width: 150px; /* Set a fixed width */
+}
+
+.hours li {
+    display: flex;
+    justify-content: space-between; /* Ensures alignment */
+    font-size: 18px;
+    padding: 5px 0;
+}
+.hours li span {
+    min-width: 100px; 
+    text-align: left;
+}
+.homediv{
+    display: block;
+    justify-self: center;
+}
+.menu{
+    display: block;
+    justify-self: center;
+}
+.about{
+    display: block;
+    justify-self: center;
+}
