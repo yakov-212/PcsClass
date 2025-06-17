@@ -65,19 +65,19 @@ img {
   padding: 10px;
 
 }
-.hours {
+#hours {
     list-style: none;
     padding: 0;
     width: 150px; /* Set a fixed width */
 }
 
-.hours li {
+#hours li {
     display: flex;
     justify-content: space-between; /* Ensures alignment */
     font-size: 18px;
     padding: 5px 0;
 }
-.hours li span {
+#hours li span {
     min-width: 100px; 
     text-align: left;
 }
@@ -89,7 +89,7 @@ img {
     display: block;
     justify-self: center;
 }
-.about{
+#about{
     display: block;
     justify-self: center;
 }
