@@ -1,0 +1,95 @@
+
+html{
+    background-color: darkgoldenrod;
+}
+body{
+    margin: auto;
+
+    background-color:black;
+    max-width:1500px;
+    color: darkgoldenrod;
+    border: 7px solid rgb(125, 107, 4)
+    
+}
+header{
+    background-color: rgb(47, 46, 46);
+    padding-top:3.5em;
+    border: 7px solid rgb(75, 89, 102);
+    
+}
+#footer-home{
+    padding: 7em;
+}
+#footer-about{
+    padding: 10em;
+    justify-content: left;
+}
+h1{
+    text-align: center;
+    color:orange;
+}
+#logo{
+    display: inline;
+    border-radius: 100%;
+    margin-top:-9.5em;
+    
+}
+a{
+    color: gold;
+    text-decoration: none;
+}
+.button:hover a{
+    color: orange;
+}
+.link {
+    text-align: center;
+}
+.button:hover{
+    background-color: bisque;
+}
+.button{
+    display: inline;
+    padding:0 1em;
+    background-color: gray;
+    
+}
+.images{
+    display: block;
+    justify-self: center;
+    
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+
+}
+.hours {
+    list-style: none;
+    padding: 0;
+    width: 150px; /* Set a fixed width */
+}
+
+.hours li {
+    display: flex;
+    justify-content: space-between; /* Ensures alignment */
+    font-size: 18px;
+    padding: 5px 0;
+}
+.hours li span {
+    min-width: 100px; 
+    text-align: left;
+}
+.homediv{
+    display: block;
+    justify-self: center;
+}
+.menu{
+    display: block;
+    justify-self: center;
+}
+.about{
+    display: block;
+    justify-self: center;
+}
