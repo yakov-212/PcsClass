@@ -21,7 +21,7 @@ header{
     padding: 7em;
 }
 #footer-about{
-    padding: 10em;
+    padding: 8em;
     justify-content: left;
 }
 h1{
@@ -81,15 +81,18 @@ img {
     min-width: 100px; 
     text-align: left;
 }
-.homediv{
+#homediv{
     display: block;
     justify-self: center;
 }
-.menu{
+#menu{
     display: block;
     justify-self: center;
 }
 .about{
     display: block;
     justify-self: center;
+}
+#about-header{
+    padding-bottom: 4em;
 }
