@@ -8,7 +8,7 @@ body{
     background-color:black;
     max-width:1500px;
     color: darkgoldenrod;
-    border: 7px solid rgb(125, 107, 4)
+    border: 7px solid rgb(125, 107, 4);
     
 }
 header{
@@ -16,13 +16,6 @@ header{
     padding-top:3.5em;
     border: 7px solid rgb(75, 89, 102);
     
-}
-#footer-home{
-    padding: 7em;
-}
-#footer-about{
-    padding: 8em;
-    justify-content: left;
 }
 h1{
     text-align: center;
@@ -68,12 +61,12 @@ img {
 #hours {
     list-style: none;
     padding: 0;
-    width: 150px; /* Set a fixed width */
+    width: 150px;
 }
 
 #hours li {
     display: flex;
-    justify-content: space-between; /* Ensures alignment */
+    justify-content: space-between; 
     font-size: 18px;
     padding: 5px 0;
 }
@@ -84,14 +77,18 @@ img {
 #homediv{
     display: block;
     justify-self: center;
+    font-size: xx-large;
+    padding-bottom: 3em;
 }
 #menu{
     display: block;
     justify-self: center;
 }
 #about{
+    padding: 2.5em;
     display: block;
     justify-self: center;
+    font-size: 1.5em;
 }
 #about-header{
     padding-bottom: 4em;
