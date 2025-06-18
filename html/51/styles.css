@@ -1,10 +1,10 @@
 
 html{
     background-color: darkgoldenrod;
+    font-size: 1.4vw;
 }
 body{
     margin: auto;
-
     background-color:black;
     max-width:1500px;
     color: darkgoldenrod;
@@ -58,37 +58,34 @@ img {
   padding: 10px;
 
 }
+#homediv {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 5em;
+}
 #hours {
     list-style: none;
     padding: 0;
-    width: 150px;
+    margin: 0 auto;
+    text-align: center;
 }
-
 #hours li {
-    display: flex;
-    justify-content: space-between; 
-    font-size: 18px;
-    padding: 5px 0;
+    padding: 0.25em 0;
 }
-#hours li span {
-    min-width: 100px; 
+#hours li b {
+    min-width: 60px;
     text-align: left;
-}
-#homediv{
-    display: block;
-    justify-self: center;
-    font-size: xx-large;
-    padding-bottom: 3em;
 }
 #menu{
     display: block;
     justify-self: center;
+    padding: auto;
 }
 #about{
     padding: 2.5em;
     display: block;
     justify-self: center;
-    font-size: 1.5em;
 }
 #about-header{
     padding-bottom: 4em;
