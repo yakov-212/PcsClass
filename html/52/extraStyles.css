@@ -1,0 +1,20 @@
+html{
+    background-color: black;
+}
+body{
+    background-color: white;
+    margin:auto;
+    max-width: 80%;
+}
+div{
+    display: inline-block;
+    background-color: yellow;
+    border: 2px solid black;
+    margin: 50px;
+    max-width: 50px;
+    padding: 50px;
+}
+span{
+    display: block;
+    margin-left:5%;
+}
