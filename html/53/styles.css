@@ -4,7 +4,7 @@ html{
     font-size: 1.4vw;
 }
 body{
-    margin: 2%;
+    margin: auto;
     background-color:black;
     max-width:1450px;
     color: darkgoldenrod;
@@ -83,9 +83,10 @@ img {
 #menu{
     display: block;
     justify-self: center;
-    padding-left: 50%;
+    padding-left: 25%;
     padding-top:10px;
-    margin:5%;
+    margin:auto;
+    overflow: hidden;
 }
 #about{
     padding: 2.5em;
@@ -96,19 +97,18 @@ img {
     padding-bottom: 4em;
 }
 #menu{
-    width:1400px;
-    height:900px;
+    max-width:1400px;
+    max-height:900px;
     background-image: url("images/menuBackground.jpeg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     color: black;
     font-family: "Lobster Two";
     font-weight: 400;
     font-size:xx-large;
 }
 #welcome{
-
     position: absolute;
     margin: 0 -500px;
     height:auto
