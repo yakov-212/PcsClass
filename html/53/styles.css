@@ -1,0 +1,115 @@
+
+html{
+    background-color: darkgoldenrod;
+    font-size: 1.4vw;
+}
+body{
+    margin: 2%;
+    background-color:black;
+    max-width:1450px;
+    color: darkgoldenrod;
+    border: 15px solid rgb(125, 107, 4);
+    border-radius: 5px;
+    
+}
+header{
+    background-color: rgb(47, 46, 46);
+    padding-top:3.5em;
+    border: 15px solid rgb(75, 89, 102);
+    border-radius: 0px 0px 5px 5px;
+    
+}
+h1{
+    text-align: center;
+    color:orange;
+}
+#logo{
+    display: inline;
+    border-radius: 100%;
+    margin-top:-9.5em;
+    
+}
+.link {
+    text-align: center;
+}
+a{
+    color: gold;
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+    cursor:pointer;
+}
+.button:hover{
+    background-color: bisque;
+}
+.button{
+    display: inline;
+    padding:0 1em;
+    background-color: gray;
+    border-radius: 5px;;
+}
+.images{
+    display: block;
+    justify-self: center;
+    
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+
+}
+#homediv {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 5em;
+}
+#hours {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+#hours li {
+    padding: 0.25em 0;
+}
+#hours li b {
+    min-width: 60px;
+    text-align: left;
+}
+#menu{
+    display: block;
+    justify-self: center;
+    padding-left: 50%;
+    padding-top:10px;
+    margin:5%;
+}
+#about{
+    padding: 2.5em;
+    display: block;
+    justify-self: center;
+}
+#about-header{
+    padding-bottom: 4em;
+}
+#menu{
+    width:1400px;
+    height:900px;
+    background-image: url("images/menuBackground.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    font-family: "Lobster Two";
+    font-weight: 400;
+    font-size:xx-large;
+}
+#welcome{
+
+    position: absolute;
+    margin: 0 -500px;
+    height:auto
+}
