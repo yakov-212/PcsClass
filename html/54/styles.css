@@ -2,6 +2,7 @@
 html{
     background-color: darkgoldenrod;
     font-size: 1.4vw;
+    overflow-x: hidden;
 }
 body{
     margin: auto;
@@ -11,16 +12,19 @@ body{
     border: 15px solid rgb(125, 107, 4);
     border-radius: 5px;
     
+    
+    
 }
 header{
     background-color: rgb(47, 46, 46);
     padding-top:3.5em;
     border: 15px solid rgb(75, 89, 102);
     border-radius: 0px 0px 5px 5px;
-    
-}
-#menu-header{
-    border-radius:0
+    position: fixed;
+    min-width:95.5%;
+    top:0;
+    margin-left: -15px;
+    z-index: 1;
 }
 h1{
     text-align: center;
@@ -115,4 +119,57 @@ img {
     position: absolute;
     margin: 0 -500px;
     height:auto
+}
+#welcome2{
+    position: absolute;
+    margin: 0 250px;
+    margin-top:-320px;
+    height:auto
+}
+#index-body{
+        padding-top: 300px;
+        padding-bottom:500px;
+}
+video{
+    position: absolute;
+    left:350px;
+}
+#menu-body{
+    padding-top: 447px;
+}
+#menu-body header{
+    border-radius:0;
+}
+#about-body{
+    padding-top: 350px;
+}
+@media (width <= 800px){
+    #index-body,#menu-body,#about-body{
+        padding:0;
+    }
+    html{
+        font-size: large;
+
+    }
+    #welcome,#welcome2{
+        display: inline;
+        position:static;
+        margin:0px;
+    }
+    header{
+        width:753px;
+        min-width: 0;
+        position:static;
+        top:auto;
+    }
+    video{
+        display: inline;
+        position:static;
+        max-width: 600px;
+        margin:10%;
+    }
+    ul{
+        font-size: large;
+    }
+    
 }
