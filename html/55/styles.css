@@ -1,0 +1,175 @@
+
+html{
+    background-color: darkgoldenrod;
+    font-size: 1.4vw;
+    overflow-x: hidden;
+}
+body{
+    margin: auto;
+    background-color:black;
+    max-width:1450px;
+    color: darkgoldenrod;
+    border: 15px solid rgb(125, 107, 4);
+    border-radius: 5px;
+    margin-top:4em;
+}
+header{
+    background-color: rgb(47, 46, 46);
+    padding-top:3.5em;
+    padding-bottom: 4em;
+    border: 15px solid rgb(75, 89, 102);
+    border-radius: 0px 0px 5px 5px;
+    position: fixed;
+    min-width:95.5%;
+    top:0;
+    margin-left: -15px;
+    z-index: 1;
+}
+h1{
+    text-align: center;
+    color:orange;
+}
+#logo{
+    display: inline;
+    border-radius: 100%;
+    margin-top:-9.5em;
+    
+}
+.link {
+    text-align: center;
+}
+a{
+    color: gold;
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+    cursor:pointer;
+}
+.button:hover{
+    background-color: bisque;
+}
+.button{
+    display: inline;
+    padding:0 1em;
+    background-color: gray;
+    border-radius: 5px;;
+}
+.images{
+    display: block;
+    justify-self: center;
+    
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+
+}
+#homediv {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 5em;
+}
+#hours {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+#hours li {
+    padding: 0.25em 0;
+}
+#hours li b {
+    min-width: 60px;
+    text-align: left;
+}
+#menu{
+    display: block;
+    justify-self: center;
+    padding-left: 25%;    
+    margin:auto;
+    overflow: hidden;
+}
+#about{
+    margin-top: -4em;
+    margin-bottom:2em;
+    display: block;
+    justify-self: center;
+    margin-left:10px;
+}
+#about-header{
+    
+}
+#menu{
+    max-width:1400px;
+    max-height:900px;
+    background-image: url("images/menuBackground.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    font-family: "Lobster Two";
+    font-weight: 400;
+    font-size:xx-large;
+}
+#welcome{
+    position: absolute;
+    margin: 0 -500px;
+    height:auto
+}
+#welcome2{
+    position: absolute;
+    margin: 0 250px;
+    margin-top:-320px;
+    height:auto
+}
+#index-body{
+        padding-top: 300px;
+        padding-bottom:500px;
+}
+video{
+    position: absolute;
+    left:350px;
+}
+#menu-body{
+    padding-top: 447px;
+}
+#menu-body header{
+    border-radius:0;
+}
+#about-body{
+    padding-top: 350px;
+}
+@media (width <= 800px){
+    #index-body,#menu-body,#about-body{
+        padding:0;
+    }
+    html{
+        font-size: large;
+
+    }
+    #welcome,#welcome2{
+        display: inline;
+        position:static;
+        margin:0px;
+    }
+    header{
+        width:753px;
+        min-width: 0;
+        position:static;
+        top:auto;
+    }
+    video{
+        display: inline;
+        position:static;
+        max-width: 600px;
+        margin:10%;
+    }
+    ul{
+        font-size: large;
+    }
+    
+}

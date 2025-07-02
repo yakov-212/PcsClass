@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/mountOlympus.jpeg">
+    <title>Mnr Olympus Contact</title>
+    <style>
+        body{
+            margin-top: 14.3em;
+        }
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 40px;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #028a57;
+}
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Contact Us</h1> Still in progress I have to stop cause it's 7:34
+
+    <div class="link">
+            <a href="index.html"><div class="button">Home</div></a>
+            <a href="menu.html"><div class="button">Menu</div></a>
+            <a href="about.html"><div class="button">About Us</div></a>
+            <a href="contact.html"><div class="button">Contact Us</div></a>
+            <a href="table.html"><div class="button">Table</div></a>
+    </div>
+
+    </header>
+    
+
+  <div class="contact-container">
+    
+    <form action="mailto:your@email.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+</body>
+</html>
