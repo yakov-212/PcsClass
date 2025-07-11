@@ -1,0 +1,23 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+        "one two three"
+        "four five six"
+        "seven eight nine";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: black;
+    width: 500px;
+    height:500px;
+    margin:auto;
+    border-radius: 100px;
+}
+div{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+}
+a:hover{
+    cursor: pointer;
+}
