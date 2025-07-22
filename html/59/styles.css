@@ -4,10 +4,13 @@ body{
     grid-template-columns: 1fr 6fr 1fr;
     font-family: helvetica,arial,sans-serif;
     margin:0;
-    overflow-x:hidden;
 }
 .grid2{
     grid-column: 2;
+}
+img{
+    max-width: 100%;
+    height: auto;
 }
 nav, footer {
     background-color: black;
@@ -59,6 +62,7 @@ a:hover{
 }
 .img-container{
     justify-items: center;
+    display: inline-block;
 }
 
 img{
@@ -67,23 +71,15 @@ img{
 }
 #sign-up {
     background-color: lightgrey;
-    display: grid;
-    height:12em;
-    grid-template-rows: auto auto auto;
+    min-height:10em;
     justify-items: center;
-
-}
-#sign-up h4{
-    grid-row:1;
-}
-#sign-up{
     border-radius: 5px; 
 }
+
 #sign-up form{
-    grid-row:2;
     display: grid;
     grid-template-columns: 35px 1fr;
-    gap: 0.5rem 1rem;                   
+    gap: 0.5rem 1rem;             
 }
 #sign-up input{
     border-radius: 5px;  
@@ -100,7 +96,6 @@ table{
     border-collapse: collapse;
     margin: auto;
     width: 80%;
-   
 }
 table th, table td{ 
     white-space: nowrap;
@@ -124,11 +119,48 @@ td:last-child{
     color:red;
 }
 tbody tr:nth-child(odd){
-    background-color: lightsteelblue;
+    background-color: rgba(161, 196, 241, 0.616);
 }
-tbody tr:hover{
+tbody tr:nth-child(odd):hover{
     background-color: blue;
 }
+tbody tr:nth-child(even):hover{
+    background-color: rgb(80, 153, 255);
+}
 .overflow{
-    overflow-x:scroll;
+    overflow-x:auto;
+    max-width: 85%;
+    margin: auto;
+}
+@media (width > 1000px) {
+    #products{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    #products div{
+    padding: 15px
+    }
+    #products div:not(:last-child){
+    border-right: 1px solid black
+    }
+    #computers{
+        grid-column: 1;
+    }
+    #choirs{
+        grid-column: 2;
+    }
+    #candy{
+        grid-column: 3;
+    }
+    #sign-up form{
+        display:block;
+        width: 600px;
+        
+    }
+    #sign-up input{
+        margin-right: 10px;
+    }
+    #sign-up button{
+        max-width: 89px;
+    }
 }
