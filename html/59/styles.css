@@ -132,6 +132,9 @@ tbody tr:nth-child(even):hover{
     max-width: 85%;
     margin: auto;
 }
+#hide-about{
+    display:none;
+}
 @media (width > 1000px) {
     #products{
     display:grid;
@@ -162,5 +165,8 @@ tbody tr:nth-child(even):hover{
     }
     #sign-up button{
         max-width: 89px;
+    }
+    #hide-about{
+        display: inline;
     }
 }
