@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 0.5em;
+      }
+
+      .form-group {
+        margin-bottom: 0.5em;
+      }
+
+      .form-group label {
+        width: 3em;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="contactsTable">
+      <thead>
+        <tr>
+          <th>first</th>
+          <th>last</th>
+          <th>email</th>
+          <th>phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">No contacts loaded</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form id="addContactForm">
+      <div class="form-group">
+        <label for="first">first:</label>
+        <input id="first" />
+      </div>
+      <div class="form-group">
+        <label for="last">last:</label>
+        <input id="last" required/>
+      </div>
+      <div class="form-group">
+        <label for="email">email:</label>
+        <input id="email" type="email"/>
+      </div>
+      <div class="form-group">
+        <label for="phone">phone:</label>
+        <input id="phone" type="tel"/>
+      </div>
+      <button>add</button>
+      <button type="reset">reset</button>
+    </form>
+
+    <script src="contacts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 35%;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label>
+        color:
+        <input id="color" type="color" />
+      </label>
+      <label>
+        background color:
+        <input id="bgcolor" type="color" />
+      </label>
+
+      name: <input id="name">
+    </div>
+    <hr>
+
+    <table id="color-table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Background Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>No Color Inputed Yet</th>
+          <th>No Background Color Inputed Yet</th>
+        </tr>
+      </tbody>
+    </table>
+   
+    <script src="colors.js"></script>
+  </body>
+</html>
