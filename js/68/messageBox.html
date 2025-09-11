@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="msg">Message</label>
+    <input id="msg">
+    <label for="args">Arguments</label>
+    <input id="args">
+    <input id="modal" type="checkbox">modal
+    <input id="callback" type="checkbox">callback
+    <button id="show">show</button>
+    <hr>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis odio rerum maxime explicabo quos aperiam quae deleniti soluta. Sint perspiciatis distinctio aut itaque at repellat temporibus debitis ea assumenda?
+    <script src="messageBox.js"></script>
+    <script>
+      pcsMessageBox('This is a test!!!');
+
+      show.addEventListener('click', () => {
+          pcsMessageBox(msg.value,args.value, modal.checked,callback.checked);
+      });
+    </script>
+  </body>
+</html>
