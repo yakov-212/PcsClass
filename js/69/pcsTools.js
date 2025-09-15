@@ -44,6 +44,9 @@ window.pcs = function (selector) {
     let stopInterval = setInterval(() => {
       clearInterval(interval);
       interval = null;
+      // not sure if this is neccisary since in hw 67 colors2.js it didnt have this part
+      clearInterval(stopInterval);
+      stopInterval = null;
     },time)
     console.log(og);
 
