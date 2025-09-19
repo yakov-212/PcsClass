@@ -1,4 +1,4 @@
-export function myApp(){
+export const app = (function(){
     let counter = (function (){
         let count = 0
         function increment(){
@@ -19,4 +19,4 @@ export function myApp(){
     
     return {counter}
     
-}
+}())

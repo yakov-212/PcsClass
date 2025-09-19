@@ -1,4 +1,4 @@
-export const app = (function (){
+export function allInOne(){
     let many = 0
     function createCounter(){
         let count = 0
@@ -23,7 +23,12 @@ export const app = (function (){
             howMany,
         }
     }
+    let counter = createCounter()
     
-    return {createCounter}
+    return {
+        createCounter,
+        counter,
+
+    }
     
-}())
+}

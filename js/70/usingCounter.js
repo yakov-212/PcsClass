@@ -1,9 +1,8 @@
-import {myApp} from './counter.js'
-import {myCreatorApp} from './createCounter.js'
-const app = myApp()
-const creatorApp = myCreatorApp()
-const aCounter = creatorApp.createCounter()
-const aCounter2 = creatorApp.createCounter()
+import {app} from './counter.js' 
+import {app as app2} from './createCounter.js'
+
+const aCounter = app2.createCounter()
+const aCounter2 = app2.createCounter()
 for (let index = 0; index < 10; index++) {
     app.counter.increment();
     aCounter.increment()
