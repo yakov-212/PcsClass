@@ -11,6 +11,8 @@ export default defineConfig([
   {
     "rules": {
       "no-var": "error",
+      "no-restricted-exports": ["error",{restrictedNamedExports: ["default"],}],
+      "no-restricted-imports": ["error",{restrictedNamedImports: ["default"],}],
     }
   }
 ]);
