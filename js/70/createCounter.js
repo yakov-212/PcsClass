@@ -1,29 +1,16 @@
 export const app = (function (){
     let many = 0
+
     function createCounter(){
         let count = 0
         many++
-        function increment(){
-            count++
-            return this
-        }
-        function reset(){
-            count = 0
-        }
-        function getCount(){
-            return count
-        }
-        function howMany(){
-            return many
-        }
         return {
-            increment,
-            reset,
-            getCount,
-            howMany,
+            increment: function(){count++},
+            reset: function(){count = 0},
+            getCount: function(){return count},
+            howMany: function(){return many},
         }
     }
     
     return {createCounter}
-    
 }())
