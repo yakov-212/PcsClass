@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loading{
+            display: none;
+        }
+        #color-wheel{
+            display: none;
+            margin:-25px 405px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: conic-gradient(
+                #EF4444 0deg, #EF4444 60deg,
+                #F97316 60deg, #F97316 120deg,
+                #FBBF24 120deg, #FBBF24 180deg,
+                #10B981 180deg, #10B981 240deg,
+                #3B82F6 240deg, #3B82F6 300deg,
+                #8B5CF6 300deg, #8B5CF6 360deg
+            );
+            transition: background-image 0.5s ease;
+            
+        }
+        #color-wheel::after {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: #222;
+            border-radius: 50%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <label for="file-name">File Name:</label>
+    <input id="file-name" placeholder="usingAjax.html">
+    <button id="load-button">Load File</button>
+    <div id="loading">Loading ...</div>
+    <div id="color-wheel"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="usingAjax.js"></script>
+    
+</body>
+</html>
