@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            
+        }
+        input[type="radio"]{
+            vertical-align: middle;
+            margin-top: -1px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <label for="opt1">Pizza</label><input type="radio" name="recipe-name" id="opt1" value="pizza" checked>
+            <label>Steak<input type="radio" name="recipe-name" value="steak"></label>
+            <label>Mac & Cheese<input type="radio" name="recipe-name" value="mac & cheese"></label>
+            <label>Burger<input type="radio" name="recipe-name" value="burger"></label>
+            <label>Pumpkin Pie<input type="radio" name="recipe-name" value="pumpkin pie"></label>
+        </form>
+        <h2></h2>
+        <img src="" alt="">
+        <h2>Ingrediants</h2>
+        <div id="ingrediants"></div>
+    </div>
+    
+    <script src="recipe.js"></script>
+</body>
+</html>
