@@ -1,0 +1,22 @@
+[
+    {
+        "title": "El Hanaar Hazeh",
+        "id": 0,
+        "video": "videos/El Hanaar Hazeh.mp4"
+    },
+    {
+        "title": "Ivri",
+        "id": 1,
+        "video": "videos/ivri.mp4"
+    },
+    {
+        "title": "Kolzman",
+        "id": 2,
+        "video": "videos/kolzman.mp4"
+    },
+    {
+        "title": "Yesh Tikvah",
+        "id": 0,
+        "video": "videos/yesh tikvah.mp4"
+    }
+]

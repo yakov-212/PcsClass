@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTubeSearch</title>
+    <style>
+        div{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        form{
+            display: inline;
+        }
+        video{
+            display:block;
+            margin-top: 100px;
+        }
+        a{
+            text-decoration: none;
+        }
+        h1{
+            text-align: center;
+            margin: 0px
+        }
+    </style>
+</head>
+<body>
+    <h1>MeTube Search</h1>
+    <nav>
+        
+        <form>
+            <button type="submit">Search</button>
+            <input id="MeTube-input" type="text">
+        </form>
+
+        <a href="MeTubeHome.html"><button id="home">Home</button></a>
+    </nav>
+    
+    <div>
+        <video src="videos/El Hanaar Hazeh.mp4" controls poster="videos/MeTube.png" width="640" height="360"></video>
+        <h2>El Hanaar Hazeh</h2>
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+    </script>
+    <script src="MeTubeSearch.js"></script>
+
+</body>
+</html>

@@ -20,7 +20,7 @@
         try{
         promisedMeal = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
         if (!promisedMeal.ok){
-            throw new error(promisiedMeal.message)
+            throw new Error(promisiedMeal.message)
         }
         meal = await promisedMeal.json()
         console.log(meal.meals[0])
