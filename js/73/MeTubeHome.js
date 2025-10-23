@@ -13,9 +13,14 @@
                     <h2>${obj[index%obj.length].title}</h2>
                     </div>`);
             }
-            $(".video-wrapper").css("display","flex")
-            $(".video-wrapper").css("flex-direction","column")
-            $(".video-wrapper").css("margin","0 25px")
+            $(".video-wrapper").css({
+                "display": "flex",
+                "flex-direction": "column",
+                "margin": "50px 25px",
+                "box-shadow": "10px 10px 5px 2px black",
+                "background-color": "#00A2E8"
+            })
+            $(".video-wrapper h2").css("margin-left","40px")
 
 
         });
