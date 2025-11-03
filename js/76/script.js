@@ -1,7 +1,6 @@
 (function(){
     'use strict'
     const images =  JSON.parse(localStorage.getItem('images')) || {}
-    console.log(images)
     const audio = document.querySelector('audio')
     
     document.querySelector('button').addEventListener("click",e => {
@@ -39,16 +38,14 @@
     for (let i = 0; i < 17;i++){
         const img = document.createElement('img')
         document.body.appendChild(img)
+        img.style.maskImage = `url(images/${i}.png)`
         img.index = i
         img.src = `images/${i}.png`
         img.style.position = 'absolute'
         img.style.left = images[i]?.posLeft || `${posLeft}px`
         img.style.top = images[i]?.posTop || `${posTop}px`
-        console.log(images[i]?.posLeft)
         images[i] = images[i] || {"posLeft": `${posLeft}px`,"posTop": `${posTop}px`}
-        console.log(images[i])
         images[i]['image'] = img
-        console.log(images[i])
         posLeft += 190
         if (i%7 === 0 && i !== 0){
             posLeft = 50
