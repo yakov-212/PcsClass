@@ -6,15 +6,12 @@
     <title>Document</title>
     <style>
         body{
-            display: grid;
-            grid-template-columns: 318px 900px 318px;
-            grid-template-rows: 1fr 1fr;
             width: 100vw;
             height: 100vh;
             background-image: url('images/background.png');
             background-repeat: no-repeat;
             background-position: center top;
-            margin:0;
+            background-size: cover;
 
         }
         button{
@@ -31,7 +28,9 @@
 </head>
 <body>
     <audio src="music/sunshine-kid-playtime-286890.mp3"></audio>
-    <button>Music</button>
+    <button id="music">Music</button>
+    <button id="set">Set 2</button>
+
     <script src="script.js"></script>
     
 </body>
