@@ -2,6 +2,9 @@
     'use strict'
     let images;
     const audio = document.querySelector('audio')
+    let movement;
+    let offset;
+    let rotation = 0
     
     document.querySelector('#music').addEventListener("click",e => {
         switch(e.target.innerText){
@@ -40,9 +43,7 @@
 
 
 
-    let movement;
-    let offset;
-    let rotation = 0
+
     
     function deleteImgs(){
         const keys = Object.keys(images)
@@ -57,7 +58,7 @@
     }
     function load(n,set,clear=false){
         if (!clear)
-            images =  JSON.parse(localStorage.getItem('images')) || {};
+            images =  JSON.parse(localStorage.getItem(`Set ${set+1}`)) || {};
         else
             images = {};
 
@@ -97,7 +98,18 @@
                     img.style.transform = `rotate(${rotation-=45}deg)`;
             })
         }
-    }    
+    }
+    function save(set){
+        try{
+        images[movement.index].posLeft = movement.style.left
+        images[movement.index].posTop = movement.style.top
+        }
+        catch{
+            console.log('save error',movement)
+        }
+        console.log(images)
+        localStorage.setItem(set,JSON.stringify(images))
+    }
     load(21,'0')
     document.addEventListener("mousemove",e => {
         if(movement){
@@ -106,19 +118,10 @@
         }
     })
     document.addEventListener("mouseup",e =>{
-        try{
-        images[movement.index].posLeft = movement.style.left
-        images[movement.index].posTop = movement.style.top
-        }
-        catch{
-            console.log(movement)
-        }
-        
-        localStorage.setItem("images",JSON.stringify(images))
-
+        save(document.querySelector("#set").innerText)
         movement = null
     })
-
+    
 
     
 }())
