@@ -12,13 +12,19 @@
         width: 100%;
         height: 100%;
         margin: 0;
+        
       }
 
       body {
         display: grid;
         grid-template-rows: 3fr 1fr;
       }
-
+      #main{
+        position: relative;
+        background-image: url('media/images/background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       #sidebar {
         display: flex;
         flex-direction: row;
@@ -40,13 +46,6 @@
         box-shadow: 0px 60px 25px rgba(0, 0, 0, 0.3);
         transform: translateY(-20px);
       }
-      
-      #main {
-        background-image: url('media/images/background.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-      }
       #trash{
         position: absolute;
         cursor: pointer;
@@ -55,21 +54,32 @@
         z-index: 3;
       }
       #menu-screen{
-        background-color: grey;
+        background-color: darkgray;
         width:1000px;
         height: 500px;
         justify-self: center;
-        display:flex;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        display:none;
         flex-direction: column;
         justify-items: center;
         align-items: center;
+      }
+      #menu-span{
         
-
+        display:flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
       }
       .menu-section{
         flex: 1;
-        display:flex;
-        align-items: center;
+        margin-top: 30px;
+        
       }
       .menu-section-button{
         min-height: 40px;
@@ -77,24 +87,110 @@
         font-size: 3em;
         border-radius: 20px;
       }
+      .gallary{
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        width: 100%;
+        height: 100%;
+        row-gap: 15%;
+        padding-top: 50px;
+        overflow: hidden;
+        overflow-y: auto;
+        
+      }
+      .gallary div{
+        width: 80%;
+        text-align: center;
+      }
+      
+      #controls-span{
+        display: none;
+        margin-top: 100px;
+        font-size: 3em;
+      }
+      #back{
+        font-size: 2rem;
+        border-radius: 10px;
+        margin-right:auto;
+        display: none;
+      }
+      #menu{
+        background-color: darkgray;
+        color:white;
+        font-size: 2rem;
+        border-radius: 10px;
+      }
+      #music{
+        font-size: 2rem;
+        width: 106px;
+        border-radius: 10px;
+        background-color: rgb(0,255,46);
+        color: white
+      }
+      .gallary div:hover{
+        box-shadow: 0px 60px 25px rgba(0, 0, 0, 0.3);
+        background-color: gray;
+        cursor: pointer;
+      }
+      .background-options{
+        object-fit: contain;
+        overflow: hidden;
+      }
+      .background-options img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+      button:hover{
+        cursor: pointer;
+      }
 
     </style>
 </head>
 <body>
   <div id="main">
-    
-        <audio src="media/music/sunshine-kid-playtime-286890.mp3" loop autoplay></audio>
+    <!-- autoplay -->
+        <audio src="media/music/Sunshine Kid Playtime.mp3" loop></audio>
         <button id="music">Play</button>
         <button id="menu">menu</button>
         <img id="trash" src="media/images/closed.png" 
      onmouseover="this.src='media/images/opened.png'" 
      onmouseout="this.src='media/images/closed.png'">
-     <!-- <div id="menu-screen">
-      <div class="menu-section"><button class="menu-section-button" id="start">start</button></div>
-      <div class="menu-section"><button class="menu-section-button" id="background">Background</button></div>
-      <div class="menu-section"><button class="menu-section-button" id="music">Music</button></div>
-      <div class="menu-section"><button class="menu-section-button" id="controls">Controls</button></div>
-     </div> -->
+     <div id="menu-screen">
+        <span id="menu-span">
+          <div class="menu-section"><button class="menu-section-button" id="start">Start</button></div>
+          <div class="menu-section"><button class="menu-section-button" id="background">Background</button></div>
+          <div class="menu-section"><button class="menu-section-button" id="menu-music">Music</button></div>
+          <div class="menu-section"><button class="menu-section-button" id="controls">Controls</button></div>
+        </span>
+        
+        <span class="gallary">
+          <div class="background-options"><img src="media/images/background.png" alt="stage" ></div>
+          <div class="background-options"><img src="media/images/Gemini_Generated_Image.png" alt="" ></div>
+          <div class="background-options"><img src="media/images/potatoes-wooden-background.jpg" alt=""></div>
+          <div class="background-options"><img src="media/images/kitchen.jpg" alt="" width="300px" ></div>
+        </span>
+        <span class="gallary">
+          <div class="music-options"><img src="media/images/audio.png" alt=""><br>Sunshine Kid Playtime</div>
+          <div class="music-options"><img src="media/images/audio.png" alt=""><br>Yesh Tikvah</div>
+          <div class="music-options"><img src="media/images/audio.png" alt=""><br>Kolzman</div>
+          <div class="music-options"><img src="media/images/audio.png" alt=""><br>Ivri</div>
+        </span>
+        <span id="controls-span">
+          <div class="controls">
+            Drag and drop from the Selection below <br>
+            Right click an item in the selection to change it<br>
+            Spin Wheel while mouse is on a piece to rotate it <br>
+            Drag and drop piece into the trash to get rid of it<br>
+            Click the trash to clear the whole screen
+          </div>
+        </span>
+        <button id="back">Back</button>
+      
+     </div>
     </div>
     <div id="sidebar">
       <div class="img-cont"><img id="0" class="potato" left=""></div>
