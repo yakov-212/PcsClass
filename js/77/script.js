@@ -16,7 +16,7 @@
     const gallary = document.querySelectorAll('.gallary');
     const back = document.querySelector('#back')
     const musicButon = document.querySelector('#music');
-    let start = false
+    let start = true
     let movement;
     let offset;
     let rotation = 0
@@ -29,6 +29,7 @@
     let b = 100;
     let menuData = {"display": true,'music':{"src":'media/music/Sunshine Kid Playtime.mp3','time':0},"background": 'url(media/images/background.png)'}
     load()
+    console.log(allParts)
     console.log(menuData.music.src)
     audio.src = menuData.music.src
 
@@ -41,6 +42,7 @@
         trash.style.display = 'none'
         document.querySelector("#music").style.display = 'none'
         document.querySelector("#menu").style.display = 'none'
+        start = false
     }
     back.addEventListener('click',() =>{
         controlSpan.style.display = 'none';
@@ -161,8 +163,7 @@
                 return
             part.remove()
         })
-       localStorage.setItem('allParts','[]')
-       
+       localStorage.removeItem('allPartsData')
 
     })
     
