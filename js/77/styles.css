@@ -104,7 +104,7 @@ body {
     margin-right:auto;
     display: none;
 }
-#menu,#save{
+#menu{
     background-color: darkgray;
     color:white;
     font-size: 2rem;
