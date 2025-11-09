@@ -1,0 +1,138 @@
+html,
+body,
+#sidebar,
+#main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+
+}
+#main{
+    position: relative;
+    background-image: url('media/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: maroon;
+}
+.img-cont{
+    display: flex;
+    flex: 1;
+    border: 2px solid #555;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.img-cont:hover{
+    position: relative;
+    box-shadow: 0px 60px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+}
+#trash{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    margin: 50;
+    z-index: 3;
+}
+#menu-screen{
+    background-color: darkgray;
+    width:1000px;
+    height: 500px;
+    justify-self: center;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    display:none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+#menu-span{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.menu-section{
+    flex: 1;
+    margin-top: 20px;
+
+}
+.menu-section-button{
+    min-height: 40px;
+    min-width: 272px;
+    font-size: 3em;
+    border-radius: 20px;
+}
+.gallary{
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 15%;
+    padding-top: 50px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.gallary div{
+    width: 80%;
+    text-align: center;
+}
+
+#controls-span{
+    display: none;
+    margin-top: 100px;
+    font-size: 3em;
+}
+#back{
+    font-size: 2rem;
+    border-radius: 10px;
+    margin-right:auto;
+    display: none;
+}
+#menu,#save{
+    background-color: darkgray;
+    color:white;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+#music{
+    font-size: 2rem;
+    width: 106px;
+    border-radius: 10px;
+    background-color: rgb(0,255,46);
+    color: white
+}
+.gallary div:hover{
+    box-shadow: 0px 60px 25px rgba(0, 0, 0, 0.3);
+    background-color: gray;
+    cursor: pointer;
+}
+.background-options{
+    object-fit: contain;
+    overflow: hidden;
+}
+.background-options img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+button:hover{
+    cursor: pointer;
+}
