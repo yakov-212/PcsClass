@@ -17,5 +17,5 @@ function Plane(color){
         console.log(`now flying at speed ${this.vSpeed}`)
     }
 }
-v1 = new Vehicle('red')
-p1 = new Plane('yellow')
+v1 = new Vehicle('red');
+p1 = new Plane('yellow');
