@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        canvas{
+            display: block;
+            border: 1px solid black;
+            background-color: black;
+        }
+        button,input,label{
+            position:absolute; 
+            font-size: 3rem;
+            width: 3em; 
+            border-radius: 10px;}
+        #play{
+            top:.5em;
+            left:.5em;
+            background-color:green;
+            color: white;
+        }
+        #reset{
+            background-color: red;
+            top:.5em;
+            left:4em;
+        }
+        #score-board{font-size: 3rem;}
+        #score,#score-message{
+            display: inline;
+        }
+        input{
+            
+            top:.5em;
+            right: 8em;
+            width:5em;
+        }
+        label{
+            top: .5em;
+            right: 13em;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <button id="reset">Reset</button>
+    <button id="play">Play</button>
+    <label>Name:</label><input id='name' type="text"></label>
+    <div>
+        <div id="score-board"><div id="score-message">Score: </div><div id="score">0</div></div>
+        <canvas></canvas>
+    </div>
+    <audio id="music" src="audio/music.mp3"></audio>
+    <audio src="audio/food.mp3"></audio>
+    <audio src="audio/move.mp3"></audio>
+    <audio src="audio/gameover.mp3"></audio>
+
+    <script src="snake.js"></script>
+</body>
+</html>
