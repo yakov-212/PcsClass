@@ -9,12 +9,19 @@
     const sounds = document.querySelectorAll('audio:not(:first-child)')
     const music = sounds.item(0)
     const reset = document.querySelector('#reset')
+    const player = document.querySelector('input')
     const effects = Array.from(sounds).slice(1);
+    const highscore = document.querySelector('#highscore')
     let lose = false
     let eat = false
+    const playerData = JSON.parse(localStorage.getItem('snakePlayerData')) ||{name:'Snake',score:0}
+    if (playerData.score > Number(highscore.innerText)){
+        highscore.innerText = playerData.score
+        document.querySelector('#high-name').innerText = playerData.name
+    }
     
-    
-
+    console.log(playerData)
+    player.addEventListener('focusout',() =>{playerData.name = player.value})
 
     const SNAKE_SIZE = 64;
 
@@ -96,23 +103,7 @@
   const snake = new Snake()
   const apples = new Apple()
 
-  document.addEventListener('keydown',e => {
-    if(!e.target.tagName === 'INPUT')
-        e.preventDefault();
-    switch(e.key){
-        case 'ArrowRight':
-        case 'ArrowLeft':
-        case 'ArrowUp':
-        case 'ArrowDown':
-        case 's':
-        case 'a':
-        case 'd':
-        case 'w':
-            snake.direction = e.key;
-            break;
-
-    }
-  })
+  
   
   reset.addEventListener("click",() => {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -137,6 +128,24 @@
 
 
   playButton.addEventListener('click',() =>{
+    document.addEventListener('keydown',e => {
+    
+        if(e.target.tagName !== 'INPUT'){
+            e.preventDefault();
+            switch(e.key){
+                case 'ArrowRight':
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                case 'ArrowDown':
+                case 's':
+                case 'a':
+                case 'd':
+                case 'w':
+                    snake.direction = e.key;
+                    break;
+                
+        }}
+    })
     setInterval(() => {
         if (snake.parts[0].x >= 0  && snake.parts[0].y >= 0 && snake.parts[0].x < canvas.width && snake.parts[0].y < canvas.height && !checkSnake()){
             
@@ -161,9 +170,19 @@
         else{
             scoreMessage.innerText = 'You Lose Score: '
 
-            if(!lose){effects[2].play();lose = true}
-            console.log(snake.parts)
-            
+            if(!lose){
+                playerData.score = Number(score.innerText)
+                effects[2].play();
+                lose = true;
+                if (playerData.score > Number(highscore.innerText)){
+                    highscore.innerText = playerData.score
+                    document.querySelector('#high-name').innerText = playerData.name
+                }
+                if(!localStorage.getItem('snakePlayerData')?.length)
+                    localStorage.setItem('snakePlayerData',JSON.stringify(playerData))
+                else if(JSON.parse(localStorage.getItem('snakePlayerData')).score < playerData.score) 
+                    localStorage.setItem('snakePlayerData',JSON.stringify(playerData))
+            }
         }
         
         

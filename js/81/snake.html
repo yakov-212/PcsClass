@@ -21,44 +21,58 @@
             border: 1px solid black;
             background-color: black;
         }
-        button,input,label{
+        header{
             position:absolute; 
             font-size: 3rem;
-            width: 3em; 
-            border-radius: 10px;}
+            width: 100%; 
+            
+            top:0;
+            display: grid; 
+            grid-template-columns: 1fr 3fr 2fr 1fr;
+        }
         #play{
+            border-radius: 10px;
+            max-height: 55px;
+            max-width: 150px;
+            font-size: 3rem;
             top:.5em;
             left:.5em;
             background-color:green;
             color: white;
         }
         #reset{
+            border-radius: 10px;
+            max-height: 55px;
+            max-width: 150px;
+            font-size: 3rem;
             background-color: red;
             top:.5em;
             left:4em;
         }
-        #score-board{font-size: 3rem;}
-        #score,#score-message{
+        #score,#score-message,h6{
             display: inline;
+            font-size: 3rem;
         }
         input{
-            
-            top:.5em;
-            right: 8em;
+            border-radius: 10px;
+            font-size: 2rem;
             width:5em;
         }
-        label{
-            top: .5em;
-            right: 13em;
-        }
+        
+        
+        
         
 
     </style>
 </head>
 <body>
-    <button id="reset">Reset</button>
-    <button id="play">Play</button>
-    <label>Name:</label><input id='name' type="text"></label>
+    <header>
+        <button id="play">Start</button>
+       <button id="reset">Reset</button>
+        <label>Name:<input id='name' type="text"></label>
+        <div id="highscore-board">Highscore <br><h6 id="high-name">Yakov</h6> :<h6 id="highscore">0</h6></div> 
+    </header>
+    
     <div>
         <div id="score-board"><div id="score-message">Score: </div><div id="score">0</div></div>
         <canvas></canvas>
