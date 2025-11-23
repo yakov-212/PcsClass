@@ -128,6 +128,8 @@
 
 
   playButton.addEventListener('click',() =>{
+    playButton.style.backgroundColor = 'gray';
+    playButton.style.color = 'black'
     document.addEventListener('keydown',e => {
     
         if(e.target.tagName !== 'INPUT'){
