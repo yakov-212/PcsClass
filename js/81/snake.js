@@ -68,8 +68,7 @@
                     this.y+= SNAKE_SIZE;
                     break; 
             }
-            this.parts.push({x:this.x,y:this.y})
-            this.parts.unshift(this.parts.pop())
+            this.parts.unshift({x:this.x,y:this.y})
             if(!eat)
                 this.parts.pop()
             this.draw()
