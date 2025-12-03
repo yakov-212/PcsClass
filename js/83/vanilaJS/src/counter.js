@@ -11,5 +11,4 @@ export function setupCounter(element) {
     setCounter(count)
   })
   setCounter(count)
- 
 }
