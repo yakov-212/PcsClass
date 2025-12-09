@@ -20,12 +20,12 @@ export default class Weather extends Component{
     }
     render(){
         return (
-            <div className="weather">
+            <>
                 <div>Weather</div>
                 <img src={this.state?.icon}></img>
                 <div>{this.state.weatherData}</div>
                 {console.log(this.state)}
-            </div>
+            </>
         )
     }
 }

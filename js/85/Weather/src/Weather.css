@@ -1,11 +1,8 @@
-.weather{
+#root{
     display: flex;
     flex-direction:column;
     justify-content: center; 
     align-items: center; 
     width: 100vw; 
-}
-.weather img{
-    width: 150px;
 }
 
