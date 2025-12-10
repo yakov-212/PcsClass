@@ -48,6 +48,7 @@ export default class Calculator extends Component{
         console.log(this.state.num)
         if (this.resultsRef.current) {
           this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;
+          console.log(this.resultsRef.current.scrollWidth)
         }
     }
 
