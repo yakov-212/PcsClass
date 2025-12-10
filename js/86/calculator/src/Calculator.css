@@ -1,15 +1,22 @@
 .results{
-    max-width:233px;
+    max-width:223px;
+    padding-right:10px;
     height:30px;
     background-color:gray;
     color:white;
     font-size: 1em;
     font-weight: 500;
     border-radius: 8px;
-    grid-column:span 2;
-    overflow: hidden;
-    
-    
+    grid-column:1/-1;
+    overflow: auto;
+    white-space: nowrap;
+    text-align: right;
+    direction: rtl;
+   scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE and Edge */
+}
+.results::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 .calculator{
     background-color: black;
@@ -18,12 +25,13 @@
     display:grid;
     grid-template-columns: 1fr 0fr;
     gap:5px;
+    white-space: nowrap;
     
 }
 .nums{
 
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     gap:5px;
     column-gap: 5px;
 }

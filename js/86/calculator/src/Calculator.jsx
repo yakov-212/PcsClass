@@ -47,30 +47,33 @@ export default class Calculator extends Component{
     calc=()=>{
         this.state.nums.push(this.state.num)
         console.log(this.state.nums)
-        const result = this.state.nums.reduce((acc, num) => {
+        let orderAcc = 0;
+        let result = this.state.nums.reduce((acc, num) => {
             if(String(num).includes('*')){
                 console.log('mult')
                 const mult = num.split('*')
                 if(mult[0] === ''){
-                    mult[0] = acc
+                    mult[0] = acc || 1
                     acc = 0
                 }
-                return acc+ mult.reduce((acc,num)=>acc*num,1)
+                return acc+ mult.reduce((ac,num)=>ac*num,1)
             }
             else if(String(num).includes('/')){
                 const div = num.split('/')
                 if(div[0] === ''){
-                    div[0] = acc
+                    div[0] = acc || 1
                     acc = 0
                 }
                 console.log('div',acc,num,div)
                 console.log()
-                return acc + div.reduce((acc,num)=>acc/num,div[0]*div[0])
+                return acc + div.reduce((ac,num)=>ac/num,div[0]*div[0])
             }
             console.log('a',acc,num)
-            return acc + num
+            orderAcc += acc +num
+            return 0 
         }, 0)
-
+        result += orderAcc
+        
         this.setState({
             results:result,
             num:result,
