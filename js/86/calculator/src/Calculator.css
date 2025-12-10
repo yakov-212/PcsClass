@@ -7,11 +7,10 @@
     font-size: 1em;
     font-weight: 500;
     border-radius: 8px;
-    grid-column:1/-1;
+    grid-column:span 2;
     overflow: auto;
     white-space: nowrap;
-    text-align: right;
-    direction: rtl;
+    text-align: left;
    scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;    /* IE and Edge */
 }

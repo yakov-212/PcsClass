@@ -8,6 +8,7 @@ export default class Calculator extends Component{
         num:0,
         positive:true
     }
+    resultsRef = React.createRef();
     clicked = e =>{   
         if(typeof(this.state.num) === 'number')   
             this.state.num *= 10
@@ -18,6 +19,9 @@ export default class Calculator extends Component{
             
         })
         console.log(this.state.num)
+        if (this.resultsRef.current) {
+          this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;
+        }
     }
     
     add =(e) =>{
@@ -42,6 +46,9 @@ export default class Calculator extends Component{
             results: this.state.results += ` ${op} `
         })
         console.log(this.state.num)
+        if (this.resultsRef.current) {
+          this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;
+        }
     }
 
     calc=()=>{
@@ -97,7 +104,7 @@ export default class Calculator extends Component{
         return (
             <>
             <div className='calculator'>
-                <div className='results'> {this.state.results}</div>
+                <div className='results' ref={this.resultsRef}> {this.state.results}</div>
                 <div className='nums'>
                     {this.createButtons()}
                     {this.createButton('clr',() =>  this.setState({results:'',num:0,nums:[],positive:true}))}
