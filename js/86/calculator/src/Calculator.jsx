@@ -26,7 +26,13 @@ export default class Calculator extends Component{
         const positive = op === '-' ? false : true
         this.state.positive = positive
         if (op === '*' || op === '/'){
-            this.state.num = `${this.state.num}${op}`
+            const o = op === '*' ? '/' : '*';
+            if (String(this.state.num).includes(o)){
+                this.state.nums.push(this.state.num)
+                this.state.num = op
+            }
+            else
+                this.state.num = `${this.state.num}${op}`
         }
         else{
             this.state.nums.push(this.state.num)
@@ -40,20 +46,31 @@ export default class Calculator extends Component{
 
     calc=()=>{
         this.state.nums.push(this.state.num)
+        console.log(this.state.nums)
         const result = this.state.nums.reduce((acc, num) => {
             if(String(num).includes('*')){
                 console.log('mult')
                 const mult = num.split('*')
+                if(mult[0] === ''){
+                    mult[0] = acc
+                    acc = 0
+                }
                 return acc+ mult.reduce((acc,num)=>acc*num,1)
             }
             else if(String(num).includes('/')){
                 const div = num.split('/')
-                console.log(div,num)
-                return acc + div.reduce((acc,num)=>acc/num,div[0]*10)
+                if(div[0] === ''){
+                    div[0] = acc
+                    acc = 0
+                }
+                console.log('div',acc,num,div)
+                console.log()
+                return acc + div.reduce((acc,num)=>acc/num,div[0]*div[0])
             }
-            console.log(acc,num)
+            console.log('a',acc,num)
             return acc + num
         }, 0)
+
         this.setState({
             results:result,
             num:result,
