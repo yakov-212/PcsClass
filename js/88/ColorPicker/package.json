@@ -1,8 +1,7 @@
 {
-  "name": "calculator",
+  "name": "colorpicker",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://yakov-212.github.io/projects/calculator",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -18,7 +18,6 @@ export default class Calculator extends Component{
             num: this.state.num += Number(e.target.innerText)*(this.state.positive ? 1:-1),
             
         })
-        console.log(this.state.num)
         if (this.resultsRef.current) {
           this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;
         }
@@ -45,20 +44,15 @@ export default class Calculator extends Component{
         this.setState({
             results: this.state.results += ` ${op} `
         })
-        console.log(this.state.num)
         if (this.resultsRef.current) {
-          this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;
-          console.log(this.resultsRef.current.scrollWidth)
-        }
+          this.resultsRef.current.scrollLeft = this.resultsRef.current.scrollWidth;        }
     }
 
     calc=()=>{
         this.state.nums.push(this.state.num)
-        console.log(this.state.nums)
         let orderAcc = 0;
         let result = this.state.nums.reduce((acc, num) => {
             if(String(num).includes('*')){
-                console.log('mult')
                 const mult = num.split('*')
                 if(mult[0] === ''){
                     mult[0] = acc || 1
@@ -72,11 +66,8 @@ export default class Calculator extends Component{
                     div[0] = acc || 1
                     acc = 0
                 }
-                console.log('div',acc,num,div)
-                console.log()
                 return acc + div.reduce((ac,num)=>ac/num,div[0]*div[0])
             }
-            console.log('a',acc,num)
             orderAcc += acc +num
             return 0 
         }, 0)
@@ -90,7 +81,7 @@ export default class Calculator extends Component{
         })
     }
     createButton(text,clicked,classN = null){
-        return <button onClick={clicked} className={classN}>{text}</button>
+        return <button onClick={clicked} className={classN} key={text}>{text}</button>
     }
     createButtons(){
         const buttons = []
