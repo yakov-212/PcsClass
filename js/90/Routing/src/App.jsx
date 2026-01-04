@@ -1,36 +1,9 @@
 import './App.css'
-import {createBrowserRouter,Outlet,Link,useLocation} from 'react-router' 
+import {createBrowserRouter,Outlet,Link} from 'react-router' 
 import {RouterProvider} from 'react-router'
-import Sell from './Sell'
-import Buy from './Buy'
-
+import Title from './Title'
 function App() {
 
-  const Title = () =>{
-    const loc =  useLocation()
-    const getTitle = (pathname) => {
-      let title
-      switch(pathname){
-        case '/':
-          title = 'Home Page'
-          break;
-        case '/sell':
-          title = 'Sell Page'
-          break;
-        case '/buy':
-          title = 'Buy Page'
-          break;
-        default:
-          title = 'Error Page'
-          break
-        
-      }
-      return title;
-    };
-    return <h1>{getTitle(loc.pathname)}</h1>
-  }
-  
-  
   const router = createBrowserRouter(
     [
       {
@@ -53,11 +26,11 @@ function App() {
                   },
                   {
                     path:'/buy',
-                    element:<Buy/>
+                    element:<div>Here is where there would be many houses to choose from to buy</div>
                   },
                   {
                     path:'/sell',
-                    element: <Sell/>
+                    element: <div>Here is where you would be able to put your house on the market</div>
                   },
                   {
                     path: '*',
