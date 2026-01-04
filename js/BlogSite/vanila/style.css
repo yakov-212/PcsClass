@@ -1,4 +1,13 @@
+
 li{
     cursor: pointer;
 }
 
+b{
+    pointer-events: none;
+}
+
+#button-comments{display: none;}
+#comments{display:none}
+
+a{display: inline;}
