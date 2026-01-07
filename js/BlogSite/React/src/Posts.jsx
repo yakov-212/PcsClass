@@ -16,7 +16,7 @@ const Component = ({data}) => {
                         <> 
                             <li key={post.id} >
                                 <b>{post.title}</b>
-                                <br/>{post.body}
+                                <br/>&ensp;{post.body}
                             </li>
                             <br></br>
                         </>

@@ -19,7 +19,7 @@ const Component = ({data}) => {
                     <li key={comment.id}>
                         <b>{comment.name}</b>
                         <br />
-                        {comment.body}
+                        &ensp;{comment.body}
                     </li>
                 ))}
             </ul>
