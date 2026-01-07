@@ -4,7 +4,7 @@ export default function Header(props){
         <>
             <header>
                 <h1>{props.txt}</h1>
-                {props.txt !== 'Blogs' && <NavLink to="/"><h2 style={{textAlign:'start',paddingLeft:'10px'}}>Home</h2></NavLink>}
+                {props.txt !== 'Blogs' && <NavLink to="/"><h2 style={{textAlign:'start',paddingLeft:'10px'}}>Blogs</h2></NavLink>}
             </header>
             <hr/>
         </>
