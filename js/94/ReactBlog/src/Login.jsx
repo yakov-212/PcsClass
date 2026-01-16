@@ -7,13 +7,13 @@ export default function Login({setLoggedInUser}){
     const [password,setPassword] = useState('');
     const navigate = useNavigate();
     const [users,setUsers] = useState(JSON.parse(localStorage.getItem('user')) || {});
+    const [txt,setTxt] = useState('');
 
     function signUpHandler(){
         let stop = false;
         Object.values(users).forEach((user)=>{
-            console.log(email,user.email);
             if(email === user.email){
-                alert('User already exists. Please login.');
+                setTxt('User already exists. Please login.');
                 stop = true;
                 return;
             }
@@ -24,6 +24,7 @@ export default function Login({setLoggedInUser}){
         setUsers(newUsers);
         localStorage.setItem('user',JSON.stringify(newUsers));
         setLoggedInUser(email);
+        setTxt('');
         navigate('/blogs');
         
     }
@@ -35,16 +36,17 @@ export default function Login({setLoggedInUser}){
                 navigate('/blogs');
                 found = true;
                 setLoggedInUser(email);
+                setTxt('');
                 return
             }
             else if(email === user.email || password === user.password){
-                alert('Email or password is incorrect.');
+                setTxt('Email or password is incorrect.');
                 oneFound = true;
                 return;
             }
         });        
         if(!found && !oneFound){
-            alert('Email and password do not exist. Please sign up.');
+            setTxt('Email and password do not exist. Please sign up.');
         }
     }
 
@@ -74,6 +76,7 @@ export default function Login({setLoggedInUser}){
                 <button type='submit' value='L' style={{marginRight:'15px'}}>Login</button>
                 <button type='submit' value='S' >Sign Up</button>
             </form>
+            <div style={{color:'red',paddingTop:'10px'}}>{txt}</div>
         </div>
     )
 }

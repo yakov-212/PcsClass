@@ -3,37 +3,37 @@ import { useState } from "react"
 import { useParams } from "react-router";
 
 export default function Comments({loggedInUser}){
-    console.log('loggedInUser in Comments:',loggedInUser);
+    
     const [show,setShow] = useState(false);
     const {id} = useParams();
     const [comment,setComment] = useState('');
     const {name} = useParams();
-    const [userComments,setUserComments] = useState(JSON.parse(localStorage.getItem(`${name} comments`)) || []);
+    const [userComments,setUserComments] = useState(JSON.parse(localStorage.getItem(`comments`)) || {});
     
 
     function handleClick(){
-        console.log('type',Array.isArray(userComments));
-        console.log('userComments',userComments);
-        const maxId = userComments.reduce((max, usercomment) => {
+        const currentBlogComments = userComments[name] || [];
+        const maxId = currentBlogComments.reduce((max, usercomment) => {
             return usercomment.id > max ? usercomment.id : max;
         }, 0)|| 1000;
-        const savedComments = [...userComments];
-        savedComments.unshift({id: maxId + 1, email: loggedInUser, body: comment});
-        setUserComments(savedComments);
-        localStorage.setItem(`${name} comments`,JSON.stringify(savedComments));
+        const newComment = { id: maxId + 1, email: loggedInUser, body: comment };
+        const updatedComments = {...userComments, [name]: [newComment, ...currentBlogComments]};
+        setUserComments(updatedComments);
+        localStorage.setItem(`comments`,JSON.stringify(updatedComments));
         setComment('');
     }
 
     const Component = ({data}) => {
-        const newData = [...userComments,...data];
+        const existingComments = userComments[name] || [];
+        const newData = [...existingComments, ...data];
         return (
             <div style={{textAlign: 'start'}}>
                 <ul>
                     {newData.map((comment) => (
-                        <li key={comment?.id}>
-                            <b>{comment?.email}</b>
+                        <li key={comment.id}>
+                            <b>{comment.email}</b>
                             <br />
-                            &ensp;{comment?.body}
+                            &ensp;{comment.body}
                         </li>
                     ))}
                 </ul>

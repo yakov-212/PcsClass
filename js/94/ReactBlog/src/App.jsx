@@ -19,14 +19,16 @@ function App() {
           <Routes>
             <Route path='/' element={<Login setLoggedInUser={setLoggedInUser}></Login>}/>
     
-            {loggedInUser ? (
-                <Route path='/blogs' element={<Home setLoggedInUser={setLoggedInUser}></Home>} >
-              <Route index element={<Blogs ></Blogs>}/>
-    
-              <Route path='/blogs/:id/:name' element={<Posts></Posts>} >
-                <Route index element={<Comments loggedInUser={loggedInUser}></Comments>}></Route>
-              </Route>
-            </Route>) : <Route path="*" element={<Navigate to="/" replace />} />
+            {
+                loggedInUser ? (
+                    <Route path='/blogs' element={<Home setLoggedInUser={setLoggedInUser}></Home>} >
+                        <Route index element={<Blogs ></Blogs>}/>
+                
+                        <Route path='/blogs/:id/:name' element={<Posts></Posts>} >
+                            <Route index element={<Comments loggedInUser={loggedInUser}></Comments>}></Route>
+                        </Route>
+                    </Route>
+                ) : <Route path="*" element={<Navigate to="/" replace />} />
             }
     
             <Route path='*' element={<ErrorPage></ErrorPage>}/>

@@ -4,7 +4,7 @@ export default function ErrorPage(){
         <>
             <h1>404 Page Not Found</h1>
             <hr/>
-            <NavLink to="/"><h2>Go Home</h2></NavLink>
+            <NavLink to={'/'}><h2>Go Home</h2></NavLink>
         </>
     )
 }
