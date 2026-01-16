@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router";
 
 export default function Comments({loggedInUser}){
-    
+    console.log('loggedInUser in Comments:',loggedInUser);
     const [show,setShow] = useState(false);
     const {id} = useParams();
     const [comment,setComment] = useState('');

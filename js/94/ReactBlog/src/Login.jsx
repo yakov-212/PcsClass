@@ -26,6 +26,7 @@ export default function Login({setLoggedInUser}){
         setLoggedInUser(email);
         setTxt('');
         navigate('/blogs');
+        localStorage.setItem('loggedIn','true');
         
     }
     function loginHandler(){
@@ -37,6 +38,7 @@ export default function Login({setLoggedInUser}){
                 found = true;
                 setLoggedInUser(email);
                 setTxt('');
+                localStorage.setItem('loggedIn','true');
                 return
             }
             else if(email === user.email || password === user.password){
