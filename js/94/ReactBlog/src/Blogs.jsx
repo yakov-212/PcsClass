@@ -15,9 +15,9 @@ const Component =({data})=> {
         <> 
           <NavLink to={`/blogs/${user.id}/${user.name}`} key={user.id} style={{ color:'black' }}>
               <li key={user.id} >
-                  <b>name: </b> {user.name}{/* 
-                  */} <b>website: </b> {user.website}{/*
-                  */} <b>company: </b> {user.company.name}, {user.company.bs}
+                  <b>{user.name}</b> {/* 
+                  */}<br></br>  <span style={{fontStyle:'italic'}}>{user.company.name}, {user.company.bs}</span>{/*
+                  */} <b style={{fontStyle:'italic'}}>@ {user.website}</b>
               </li>
           </NavLink>
           <br></br>
