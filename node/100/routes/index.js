@@ -65,4 +65,11 @@ router.post('/deleteContact/:id', (req, res, next) => {
   res.end();
 });
 
+router.get("/api/contacts",(req,res,next) =>{
+  res.contentType('json')
+  res.end(JSON.stringify(contacts))
+})
+
+
+
 module.exports = router;
