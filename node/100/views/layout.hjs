@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>{{ appTitle }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <h1>{{ appTitle }}</h1>
+    <h2>{{ title }}</h2>
+    {{> content}}
+  </body>
+
+</html>

@@ -1,0 +1,20 @@
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+.form-group {
+  margin-bottom: 0.5em;
+}
+
+.form-group label {
+  width: 3em;
+  display: inline-block;
+}
