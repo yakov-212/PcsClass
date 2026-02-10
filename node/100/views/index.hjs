@@ -2,11 +2,12 @@
 <table id="contactsTable">
   <thead>
     <tr>
-      <th>first</th>
-      <th>last</th>
-      <th>email</th>
-      <th>phone</th>
-      <th></th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>ID</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
