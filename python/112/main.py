@@ -14,7 +14,7 @@ print(rolls)
 die_two = Die()
 points = 0
 while True:
-    if input("Press Enter to spin again type anything and enter to quit: "):
+    if input("Press Enter to spin, type anything and enter to quit: "):
         break
     spin = die.roll() + die_two.roll()
     if spin == 2 or spin == 3:
