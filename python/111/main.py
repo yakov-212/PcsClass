@@ -1,4 +1,21 @@
 from random import randint
+import json
+
+
+players = {'key':2}
+try:
+    with open('players.json','r') as f:
+        players = json.load(f)
+except FileNotFoundError:
+    pass
+
+def get_player():
+    global high_score
+    name = input("Enter your name: ")
+    if name in players.keys():
+        high_score = players[name]
+       
+
 
 def get_guess():
     while True:
@@ -33,6 +50,8 @@ BLUE = "\033[34m"
 GRAY = "50\x1b[38;5;243m"
         
 high_score = 0
+get_player()
+print(high_score)
 while True:
     target = randint(1,100)
     score = game_loop()
