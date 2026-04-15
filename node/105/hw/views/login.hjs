@@ -1,0 +1,6 @@
+<form action="login" method="POST">
+    <h1>Login</h1>
+    <label>Name: <input type="text" name="userName"></label>
+    <label>Password: <input type="password" name="password"></label>
+    <button type="submit">Enter</button>
+</form>

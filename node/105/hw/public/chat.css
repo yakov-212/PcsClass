@@ -1,0 +1,14 @@
+#messages {
+  height: 10em;
+  border: 1px solid black;
+  margin-bottom: .5em;
+}
+
+#messageForm {
+  display: flex;
+  gap: .5em;
+}
+
+#messageInput {
+  flex: 1;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <form action="/?userName={{userName.value}}" method="get">
+      <label > Name <input type="text" name="userName"></label>
+      <button>Enter</button>
+    </form>
+    <h1 id="name">{{userName}}</h1>
+  </body>
+</html>

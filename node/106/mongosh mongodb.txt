@@ -1,0 +1,161 @@
+Microsoft Windows [Version 10.0.26200.8039]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\jacob>mongosh
+Current Mongosh Log ID: 69dd8f7d1d3d5f0b5e3682d0
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.8.2
+Using MongoDB:          8.2.6
+Using Mongosh:          2.8.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-04-13T20:44:24.212-04:00: Access control is not enabled for the database. Read and write access to dataand configuration is unrestricted
+------
+
+test> db
+test
+test> use PCS
+switched to db PCS
+PCS> db.pcs.insertOne( {x:1} )
+{
+  acknowledged: true,
+  insertedId: ObjectId('69ded2ba1d3d5f0b5e3682d1')
+}
+PCS> db.PCS.find()
+
+PCS> db.pcs.find()
+[ { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 } ]
+PCS> db.pcs.insertOne( {y:2} )
+{
+  acknowledged: true,
+  insertedId: ObjectId('69ded3031d3d5f0b5e3682d2')
+}
+PCS> db.pcs.insertOne( {z:3} )
+{
+  acknowledged: true,
+  insertedId: ObjectId('69ded3091d3d5f0b5e3682d3')
+}
+PCS> db.pcs.find()
+[
+  { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 },
+  { _id: ObjectId('69ded3031d3d5f0b5e3682d2'), y: 2 },
+  { _id: ObjectId('69ded3091d3d5f0b5e3682d3'), z: 3 }
+]
+PCS> db.pcs.find({x:1})
+[ { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 } ]
+PCS> db.pcs.insertMany({a:4},{b:5},{c:6})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+PCS> db.pcs.insertMany([{a:4},{b:5},{c:6}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69ded35d1d3d5f0b5e3682d4'),
+    '1': ObjectId('69ded35d1d3d5f0b5e3682d5'),
+    '2': ObjectId('69ded35d1d3d5f0b5e3682d6')
+  }
+}
+PCS> db.pcs.insertMany([{x:2},{x:3},{x:4},{x:5}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69ded3b71d3d5f0b5e3682d7'),
+    '1': ObjectId('69ded3b71d3d5f0b5e3682d8'),
+    '2': ObjectId('69ded3b71d3d5f0b5e3682d9'),
+    '3': ObjectId('69ded3b71d3d5f0b5e3682da')
+  }
+}
+PCS> db.pcs.find(x:{$gte:3})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:13)
+
+> 1 | db.pcs.find(x:{$gte:3})
+    |              ^
+  2 |
+
+PCS> db.pcs.find(x)
+ReferenceError: x is not defined
+PCS> db.pcs.find({x:{$gte:3}})
+[
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d8'), x: 3 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d9'), x: 4 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682da'), x: 5 }
+]
+PCS> db.pcs.updateOne({x:5},{$set:{x:6}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+PCS> db.pcs.find()
+[
+  { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 },
+  { _id: ObjectId('69ded3031d3d5f0b5e3682d2'), y: 2 },
+  { _id: ObjectId('69ded3091d3d5f0b5e3682d3'), z: 3 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d4'), a: 4 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d5'), b: 5 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d6'), c: 6 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d7'), x: 2 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d8'), x: 3 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d9'), x: 4 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682da'), x: 6 }
+]
+PCS> db.pcs.updateMany({x:{$gte:3},{$set:{x:7}}})
+Uncaught:
+SyntaxError: Unexpected token (1:30)
+
+> 1 | db.pcs.updateMany({x:{$gte:3},{$set:{x:7}}})
+    |                               ^
+  2 |
+
+PCS> db.pcs.updateMany({x:{$gte:3}},{$set:{x:7}}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:43)
+
+> 1 | db.pcs.updateMany({x:{$gte:3}},{$set:{x:7}}})
+    |                                            ^
+  2 |
+
+PCS> db.pcs.updateMany({x:{$gte:3}},{$set:{x:7}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+PCS> db.pcs.find()
+[
+  { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 },
+  { _id: ObjectId('69ded3031d3d5f0b5e3682d2'), y: 2 },
+  { _id: ObjectId('69ded3091d3d5f0b5e3682d3'), z: 3 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d4'), a: 4 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d5'), b: 5 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d6'), c: 6 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d7'), x: 2 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d8'), x: 7 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d9'), x: 7 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682da'), x: 7 }
+]
+PCS> db.pcs.deleteOne({x:7})
+{ acknowledged: true, deletedCount: 1 }
+PCS> db.pcs.deleteMany({x:7})
+{ acknowledged: true, deletedCount: 2 }
+PCS> db.pcs.find()
+[
+  { _id: ObjectId('69ded2ba1d3d5f0b5e3682d1'), x: 1 },
+  { _id: ObjectId('69ded3031d3d5f0b5e3682d2'), y: 2 },
+  { _id: ObjectId('69ded3091d3d5f0b5e3682d3'), z: 3 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d4'), a: 4 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d5'), b: 5 },
+  { _id: ObjectId('69ded35d1d3d5f0b5e3682d6'), c: 6 },
+  { _id: ObjectId('69ded3b71d3d5f0b5e3682d7'), x: 2 }
+]
+PCS>

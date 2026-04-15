@@ -1,0 +1,10 @@
+<form method="get" >
+  <div class="form-group">
+    <label for="id">id:</label>
+    <input id="id" name="id" value="1" type="number"/>
+  </div>
+  <a href="/api/contacts/{{id}}">
+  0<button type="button">Enter</button></a>
+  <button type="reset">Reset</button>
+  <a href="/"><button id="cancel" type="button">Cancel</button></a>
+</form>
